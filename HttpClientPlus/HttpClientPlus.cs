@@ -39,7 +39,7 @@ namespace IMustafa.Web
 
         }
 
-        private void setHeaders(string key, string value)
+        private void setHeader(string key, string value)
         {
             _httpClient.DefaultRequestHeaders.Add(key, value);
         }
@@ -48,7 +48,7 @@ namespace IMustafa.Web
         {
             foreach (var item in headers)
             {
-                this.setHeaders(item.Key, item.Value);
+                this.setHeader(item.Key, item.Value);
             }
         }
 

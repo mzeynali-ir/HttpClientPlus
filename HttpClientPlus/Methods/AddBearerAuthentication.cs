@@ -5,7 +5,7 @@
         public void AddBearerAuthentication(string token)
         {
             string key = "Authorization";
-            this.setHeaders(key, $"Bearer {token}");
+            this.setHeader(key, $"Bearer {token}");
         }
     }
 }
