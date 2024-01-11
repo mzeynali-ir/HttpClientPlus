@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace IMustafa
+namespace IMustafa.Web
 {
 
     public partial class HttpClientPlus : IDisposable

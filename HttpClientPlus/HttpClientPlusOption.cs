@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace IMustafa
+namespace IMustafa.Web
 {
     public class HttpClientPlusOption
     {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace IMustafa
+namespace IMustafa.Web
 {
     public partial class HttpClientPlus
     {

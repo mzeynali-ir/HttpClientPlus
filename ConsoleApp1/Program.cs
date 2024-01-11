@@ -1,6 +1,5 @@
-﻿using IMustafa;
+﻿using IMustafa.Web;
 using System;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
@@ -13,6 +12,7 @@ namespace ConsoleApp1
 
             using (var client = new HttpClientPlus(new MyConfig()))
             {
+                client.SetContentType(ContentType.Application_Json);
                 client.BaseAddress = new Uri("https://google.com");
                 var rrr = client.GetAsync("https://google.com").Result;
 
@@ -25,7 +25,7 @@ namespace ConsoleApp1
 
     public class MyConfig : HttpClientPlusOption
     {
-        public override Task AfterExecuteAsync(HttpResponseMessage response)
+        public override Task AfterExecuteAsync<HttpResponseMessage>(HttpResponseMessage response)
         {
             Console.WriteLine("after");
 

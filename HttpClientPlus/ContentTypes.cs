@@ -1,4 +1,4 @@
-﻿namespace IMustafa
+﻿namespace IMustafa.Web
 {
     public partial struct ContentType
     {

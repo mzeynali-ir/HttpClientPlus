@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Headers;
 
-namespace IMustafa
+namespace IMustafa.Web
 {
     public partial class HttpClientPlus
     {

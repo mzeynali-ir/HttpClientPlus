@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace IMustafa
+namespace IMustafa.Web
 {
     public partial class HttpClientPlus
     {

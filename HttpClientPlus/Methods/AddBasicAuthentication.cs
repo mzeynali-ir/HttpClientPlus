@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IMustafa
+namespace IMustafa.Web
 {
     public partial class HttpClientPlus
     {
