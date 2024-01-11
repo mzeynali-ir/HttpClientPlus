@@ -6,20 +6,21 @@ namespace IMustafa.Web
 {
     public abstract partial class HttpClientPlusOption
     {
-        public void SetDefaultHeaders(Dictionary<string, string> headers)
+        public void SetDefaultHeaders(List<RequestHeader> headers)
         {
             DefaultHeaders = headers;
         }
 
-        public void SetDefaultHeaders(Func<Dictionary<string, string>> getDefaultHeadersFunc)
+        public void SetDefaultHeaders(Func<List<RequestHeader>> getDefaultHeadersFunc)
         {
             DefaultHeaders = getDefaultHeadersFunc();
         }
 
-        public async void SetDefaultHeadersAsync(Func<Task<Dictionary<string, string>>> getDefaultHeadersFunc)
+        public async void SetDefaultHeadersAsync(Func<Task<List<RequestHeader>>> getDefaultHeadersFunc)
         {
             DefaultHeaders = await getDefaultHeadersFunc();
         }
+
     }
 }
 

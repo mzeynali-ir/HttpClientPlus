@@ -44,7 +44,7 @@ namespace IMustafa.Web
             _httpClient.DefaultRequestHeaders.Add(key, value);
         }
 
-        private void setHeaders(Dictionary<string, string> headers)
+        private void setHeaders(List<RequestHeader> headers)
         {
             foreach (var item in headers)
             {
