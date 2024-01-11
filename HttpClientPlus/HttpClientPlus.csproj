@@ -5,14 +5,20 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 
-		<Version>1.0.5</Version>
+		<Version>1.0.6</Version>
 
 		<Company>IMustafa</Company>
 
 		<Description>this package is layer for HttpClient package for Improve it. my package let you call actions in before all call apis. enjoy it 😃</Description>
 
 		<Copyright>2024</Copyright>
+
+		<ApplicationIcon>favicon.ico</ApplicationIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="favicon.ico" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Update="@(Compile)">
