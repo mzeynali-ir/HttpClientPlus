@@ -9,7 +9,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.SendAsync(request);
             });
@@ -17,7 +17,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.SendAsync(request, completionOption);
             });
@@ -25,7 +25,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.SendAsync(request, completionOption, cancellationToken);
             });

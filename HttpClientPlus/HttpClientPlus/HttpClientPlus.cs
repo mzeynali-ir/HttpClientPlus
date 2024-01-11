@@ -63,8 +63,15 @@ namespace IMustafa.Web
             try
             {
                 response = await action();
+                if (response is HttpResponseMessage responseCast)
+                {
+                    await _config.AfterExecuteAsync(responseCast);
+                }
+                else
+                {
+                    await _config.AfterExecuteAsync();
+                }
 
-                await _config.AfterExecuteAsync();
             }
             catch (Exception ex)
             {

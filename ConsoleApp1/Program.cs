@@ -1,5 +1,6 @@
 ﻿using IMustafa.Web;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
@@ -25,11 +26,23 @@ namespace ConsoleApp1
 
     public class MyConfig : HttpClientPlusOption
     {
+
         public override Task AfterExecuteAsync()
         {
             Console.WriteLine("after");
 
             return base.AfterExecuteAsync();
+        }
+
+        public override Task AfterExecuteAsync(HttpResponseMessage response)
+        {
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("response is success");
+            }
+
+            return base.AfterExecuteAsync(response);
         }
 
         public override Task BeforeExecuteAsync()

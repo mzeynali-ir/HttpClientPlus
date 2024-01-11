@@ -8,7 +8,7 @@ namespace IMustafa.Web
 
         public Task<string?> GetStringAsync(string requestUri)
         {
-            return this.coreAsync<string>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetStringAsync(requestUri);
             });
@@ -16,7 +16,7 @@ namespace IMustafa.Web
 
         public Task<string?> GetStringAsync(Uri requestUri)
         {
-            return this.coreAsync<string>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetStringAsync(requestUri);
             });

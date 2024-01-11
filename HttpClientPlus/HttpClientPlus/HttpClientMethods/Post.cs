@@ -11,7 +11,7 @@ namespace IMustafa.Web
         public Task<HttpResponseMessage?> PostAsync(Uri requestUri, HttpContent content)
         {
 
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.PostAsync(requestUri, content);
             });
@@ -21,7 +21,7 @@ namespace IMustafa.Web
         public Task<HttpResponseMessage?> PostAsync(string requestUri, HttpContent content)
         {
 
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.PostAsync(requestUri, content);
             });
@@ -31,7 +31,7 @@ namespace IMustafa.Web
         public Task<HttpResponseMessage?> PostAsync(string requestUri, HttpContent content, CancellationToken cancellationToken)
         {
 
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.PostAsync(requestUri, content, cancellationToken);
             });
@@ -41,7 +41,7 @@ namespace IMustafa.Web
         public Task<HttpResponseMessage?> PostAsync(Uri requestUri, HttpContent content, CancellationToken cancellationToken)
         {
 
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.PostAsync(requestUri, content, cancellationToken);
             });

@@ -9,7 +9,7 @@ namespace IMustafa.Web
 
         public Task<Stream?> GetStreamAsync(string requestUri)
         {
-            return this.coreAsync<Stream>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetStreamAsync(requestUri);
             });
@@ -17,7 +17,7 @@ namespace IMustafa.Web
 
         public Task<Stream?> GetStreamAsync(Uri requestUri)
         {
-            return this.coreAsync<Stream>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetStreamAsync(requestUri);
             });
