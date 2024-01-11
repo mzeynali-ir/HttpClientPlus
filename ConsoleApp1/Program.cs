@@ -23,7 +23,7 @@ namespace ConsoleApp1
         }
     }
 
-    public class MyConfig : HttpClientPlusConfig
+    public class MyConfig : HttpClientPlusOption
     {
         public override Task AfterExecuteAsync(HttpResponseMessage response)
         {

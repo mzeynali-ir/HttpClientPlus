@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -25,9 +26,9 @@ namespace IMustafa
         }
         public HttpRequestHeaders DefaultRequestHeaders { get => _httpClient.DefaultRequestHeaders; }
 
-        private readonly HttpClientPlusConfig _config;
+        private readonly HttpClientPlusOption _config;
         private readonly HttpClient _httpClient;
-        public HttpClientPlus(HttpClientPlusConfig config)
+        public HttpClientPlus(HttpClientPlusOption config)
         {
             _config = config;
             _httpClient = new HttpClient();
@@ -60,25 +61,6 @@ namespace IMustafa
 
         }
 
-        public Task<HttpResponseMessage?> PostAsync(string requestUri, HttpContent content)
-        {
-
-            return this.coreAsync(() =>
-            {
-                return _httpClient.PostAsync(requestUri, content);
-            });
-
-        }
-
-        public Task<HttpResponseMessage?> GetAsync(string requestUri)
-        {
-
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri);
-            });
-
-        }
 
         public Task<HttpResponseMessage?> DeleteAsync(string requestUri)
         {
@@ -88,12 +70,54 @@ namespace IMustafa
             });
         }
 
+        public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.DeleteAsync(requestUri);
+            });
+        }
+
+        public Task<HttpResponseMessage?> GetAsync(string requestUri)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri);
+            });
+        }
+
+        public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri, completionOption);
+            });
+        }
+
+        public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri, completionOption);
+            });
+        }
+
         public Task<HttpResponseMessage?> PatchAsync(string requestUri, HttpContent content)
         {
             return this.coreAsync(() =>
             {
                 return _httpClient.PatchAsync(requestUri, content);
             });
+        }
+
+        public Task<HttpResponseMessage?> PostAsync(string requestUri, HttpContent content)
+        {
+
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PostAsync(requestUri, content);
+            });
+
         }
 
 
