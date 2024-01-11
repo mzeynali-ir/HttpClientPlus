@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -32,8 +33,20 @@ namespace IMustafa
         {
             _config = config;
             _httpClient = new HttpClient();
+
+            //set default headers
+            if (_config.DefaultHeaders != null)
+                this.setDefaultHeaders(_config.DefaultHeaders);
+
         }
 
+        private void setDefaultHeaders(Dictionary<string, string> headers)
+        {
+            foreach (var item in headers)
+            {
+                _httpClient.DefaultRequestHeaders.Add(item.Key, item.Value);
+            }
+        }
 
         private async Task<HttpResponseMessage?> coreAsync(Func<Task<HttpResponseMessage>> action)
         {

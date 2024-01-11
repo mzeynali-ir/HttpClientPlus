@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace IMustafa
@@ -9,6 +10,13 @@ namespace IMustafa
         public virtual Task AfterExecuteAsync(HttpResponseMessage response) => Task.CompletedTask;
         public virtual Task WhenHasErrorAsync() => Task.CompletedTask;
         public virtual Task FinalAsync() => Task.CompletedTask;
+
+        public Dictionary<string, string>? DefaultHeaders { get; private set; }
+
+        public void SetDefaultHeaders(Dictionary<string, string> headers)
+        {
+            DefaultHeaders = headers;
+        }
     }
 }
 
