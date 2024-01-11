@@ -11,16 +11,19 @@ namespace ConsoleApp_Examples
         {
             Console.WriteLine("Hello World!");
 
-            using (var client = new HttpClientPlus(new MyConfig()))
+            while (true)
             {
-                client.SetContentType(ContentType.Application_Json);
-                client.BaseAddress = new Uri("https://google.com");
-                var rrr = client.GetAsync("https://google.com").Result;
+                using (var client = new HttpClientPlus(new MyConfig()))
+                {
+                    client.AddBearerAuthentication("");
+                    client.SetContentType(ContentType.Application_Json);
+                    client.BaseAddress = new Uri("https://google.com");
+                    var rrr = client.GetAsync("https://google.com").Result;
 
+                }
+
+                Console.ReadLine();
             }
-
-            Console.ReadLine();
-
         }
     }
 
@@ -47,6 +50,8 @@ namespace ConsoleApp_Examples
 
         public override Task BeforeExecuteAsync()
         {
+            this.SetDefaultAuthorization(AuthorizationType.Bearer("token"));
+
             Console.WriteLine("before");
 
             return base.BeforeExecuteAsync();
@@ -58,5 +63,7 @@ namespace ConsoleApp_Examples
 
             return base.FinalAsync();
         }
+
+
     }
 }
