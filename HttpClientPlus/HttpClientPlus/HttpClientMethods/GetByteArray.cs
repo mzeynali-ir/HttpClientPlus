@@ -8,7 +8,7 @@ namespace IMustafa.Web
 
         public Task<byte[]?> GetByteArrayAsync(string requestUri)
         {
-            return this.coreAsync<byte[]>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetByteArrayAsync(requestUri);
             });
@@ -16,7 +16,7 @@ namespace IMustafa.Web
 
         public Task<byte[]?> GetByteArrayAsync(Uri requestUri)
         {
-            return this.coreAsync<byte[]>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetByteArrayAsync(requestUri);
             });

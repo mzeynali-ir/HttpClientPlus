@@ -10,7 +10,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.DeleteAsync(requestUri);
             });
@@ -18,7 +18,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> DeleteAsync(string requestUri)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.DeleteAsync(requestUri);
             });
@@ -26,7 +26,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.DeleteAsync(requestUri, cancellationToken);
             });
@@ -34,7 +34,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> DeleteAsync(string requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.DeleteAsync(requestUri, cancellationToken);
             });

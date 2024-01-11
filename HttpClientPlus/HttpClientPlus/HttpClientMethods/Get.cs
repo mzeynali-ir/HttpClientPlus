@@ -10,7 +10,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(string requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri, cancellationToken);
             });
@@ -18,7 +18,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(Uri requestUri)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri);
             });
@@ -26,7 +26,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri, completionOption);
             });
@@ -34,7 +34,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri, completionOption);
             });
@@ -42,7 +42,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(Uri requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri, cancellationToken);
             });
@@ -50,7 +50,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(string requestUri)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri);
             });
@@ -58,7 +58,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
             });
@@ -66,7 +66,7 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
         {
-            return this.coreAsync<HttpResponseMessage>(() =>
+            return this.coreAsync(() =>
             {
                 return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
             });
