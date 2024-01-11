@@ -3,7 +3,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp_Examples
 {
     internal class Program
     {

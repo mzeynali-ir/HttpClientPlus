@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34310.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientPlus", "HttpClientPlus\HttpClientPlus.csproj", "{2FF6CD55-A1D9-4A1A-9140-70CE1103BD69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientPlus", "HttpClientPlus\HttpClientPlus.csproj", "{2FF6CD55-A1D9-4A1A-9140-70CE1103BD69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{88655C84-70E8-44A7-B25B-1442C22DEA12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp_Examples", "ConsoleApp_Examples\ConsoleApp_Examples.csproj", "{C3DB2DF5-8535-4EC2-82C4-B34DCD37DE37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2FF6CD55-A1D9-4A1A-9140-70CE1103BD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FF6CD55-A1D9-4A1A-9140-70CE1103BD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FF6CD55-A1D9-4A1A-9140-70CE1103BD69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88655C84-70E8-44A7-B25B-1442C22DEA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88655C84-70E8-44A7-B25B-1442C22DEA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88655C84-70E8-44A7-B25B-1442C22DEA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88655C84-70E8-44A7-B25B-1442C22DEA12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3DB2DF5-8535-4EC2-82C4-B34DCD37DE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3DB2DF5-8535-4EC2-82C4-B34DCD37DE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3DB2DF5-8535-4EC2-82C4-B34DCD37DE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3DB2DF5-8535-4EC2-82C4-B34DCD37DE37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
