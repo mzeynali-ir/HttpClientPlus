@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace IMustafa
@@ -78,11 +78,28 @@ namespace IMustafa
             });
         }
 
-        public Task<HttpResponseMessage?> GetAsync(string requestUri)
+        public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri, CancellationToken cancellationToken)
         {
             return this.coreAsync(() =>
             {
-                return _httpClient.GetAsync(requestUri);
+                return _httpClient.DeleteAsync(requestUri, cancellationToken);
+            });
+        }
+
+        public Task<HttpResponseMessage?> DeleteAsync(string requestUri, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.DeleteAsync(requestUri, cancellationToken);
+            });
+        }
+
+
+        public Task<HttpResponseMessage?> GetAsync(string requestUri, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri, cancellationToken);
             });
         }
 
@@ -110,6 +127,39 @@ namespace IMustafa
             });
         }
 
+        public Task<HttpResponseMessage?> GetAsync(Uri requestUri, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri, cancellationToken);
+            });
+        }
+
+        public Task<HttpResponseMessage?> GetAsync(string requestUri)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri);
+            });
+        }
+
+        public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
+            });
+        }
+
+        public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
+            });
+        }
+
+
         public Task<HttpResponseMessage?> PatchAsync(Uri requestUri, HttpContent content)
         {
             return this.coreAsync(() =>
@@ -125,6 +175,23 @@ namespace IMustafa
                 return _httpClient.PatchAsync(requestUri, content);
             });
         }
+
+        public Task<HttpResponseMessage?> PatchAsync(Uri requestUri, HttpContent content, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PatchAsync(requestUri, content, cancellationToken);
+            });
+        }
+
+        public Task<HttpResponseMessage?> PatchAsync(string requestUri, HttpContent content, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PatchAsync(requestUri, content, cancellationToken);
+            });
+        }
+
 
         public Task<HttpResponseMessage?> PostAsync(Uri requestUri, HttpContent content)
         {
@@ -146,6 +213,27 @@ namespace IMustafa
 
         }
 
+        public Task<HttpResponseMessage?> PostAsync(string requestUri, HttpContent content, CancellationToken cancellationToken)
+        {
+
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PostAsync(requestUri, content, cancellationToken);
+            });
+
+        }
+
+        public Task<HttpResponseMessage?> PostAsync(Uri requestUri, HttpContent content, CancellationToken cancellationToken)
+        {
+
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PostAsync(requestUri, content, cancellationToken);
+            });
+
+        }
+
+
         public Task<HttpResponseMessage?> PutAsync(Uri requestUri, HttpContent content)
         {
 
@@ -158,14 +246,54 @@ namespace IMustafa
 
         public Task<HttpResponseMessage?> PutAsync(string requestUri, HttpContent content)
         {
-
             return this.coreAsync(() =>
             {
                 return _httpClient.PutAsync(requestUri, content);
             });
+        }
+
+        public Task<HttpResponseMessage?> PutAsync(Uri requestUri, HttpContent content, CancellationToken cancellationToken)
+        {
+
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PutAsync(requestUri, content, cancellationToken);
+            });
 
         }
 
+        public Task<HttpResponseMessage?> PutAsync(string requestUri, HttpContent content, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PutAsync(requestUri, content, cancellationToken);
+            });
+        }
+
+
+        public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.SendAsync(request);
+            });
+        }
+
+        public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.SendAsync(request, completionOption);
+            });
+        }
+
+        public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.SendAsync(request, completionOption, cancellationToken);
+            });
+        }
 
 
         public void Dispose()
