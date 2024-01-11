@@ -25,11 +25,11 @@ namespace ConsoleApp1
 
     public class MyConfig : HttpClientPlusOption
     {
-        public override Task AfterExecuteAsync<HttpResponseMessage>(HttpResponseMessage response)
+        public override Task AfterExecuteAsync()
         {
             Console.WriteLine("after");
 
-            return base.AfterExecuteAsync(response);
+            return base.AfterExecuteAsync();
         }
 
         public override Task BeforeExecuteAsync()

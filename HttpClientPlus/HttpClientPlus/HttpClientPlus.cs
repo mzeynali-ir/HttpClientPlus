@@ -64,7 +64,7 @@ namespace IMustafa.Web
             {
                 response = await action();
 
-                await _config.AfterExecuteAsync(response);
+                await _config.AfterExecuteAsync();
             }
             catch (Exception ex)
             {
