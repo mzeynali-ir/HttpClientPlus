@@ -5,7 +5,7 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 
-		<Version>1.0.4</Version>
+		<Version>1.0.5</Version>
 
 		<Company>IMustafa</Company>
 
@@ -14,6 +14,11 @@
 		<Copyright>2024</Copyright>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<Compile Update="@(Compile)">
+			<Visible Condition="'%(NuGetItemType)' == 'Compile' and '%(NuGetPackageId)' == 'Foo'">false</Visible>
+		</Compile>
+	</ItemGroup>
 
 
 </Project>
