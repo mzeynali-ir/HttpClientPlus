@@ -26,4 +26,8 @@
 		</Compile>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Methods\" />
+	</ItemGroup>
+
 </Project>
