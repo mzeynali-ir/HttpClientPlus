@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace IMustafa.Web
 {
-    public partial class HttpClientPlusOption
+    public abstract partial class HttpClientPlusOption
     {
 
         public virtual Task BeforeExecuteAsync() => Task.CompletedTask;

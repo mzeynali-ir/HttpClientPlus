@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace IMustafa.Web
 {
-    public partial class HttpClientPlusOption
+    public abstract partial class HttpClientPlusOption
     {
         public void SetDefaultHeaders(Dictionary<string, string> headers)
         {

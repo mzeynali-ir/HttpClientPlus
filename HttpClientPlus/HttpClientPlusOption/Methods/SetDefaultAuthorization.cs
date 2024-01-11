@@ -1,6 +1,6 @@
 ﻿namespace IMustafa.Web
 {
-    public partial class HttpClientPlusOption
+    public abstract partial class HttpClientPlusOption
     {
         public void SetDefaultAuthorization(AuthorizationType authorization)
         {

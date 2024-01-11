@@ -2,7 +2,7 @@
 
 namespace IMustafa.Web
 {
-    public partial class HttpClientPlusOption
+    public abstract partial class HttpClientPlusOption
     {
         public Dictionary<string, string>? DefaultHeaders { get; private set; }
         public AuthorizationType? DefaultAuthorization { get; private set; }
