@@ -62,14 +62,6 @@ namespace IMustafa
         }
 
 
-        public Task<HttpResponseMessage?> DeleteAsync(string requestUri)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.DeleteAsync(requestUri);
-            });
-        }
-
         public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri)
         {
             return this.coreAsync(() =>
@@ -78,7 +70,23 @@ namespace IMustafa
             });
         }
 
+        public Task<HttpResponseMessage?> DeleteAsync(string requestUri)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.DeleteAsync(requestUri);
+            });
+        }
+
         public Task<HttpResponseMessage?> GetAsync(string requestUri)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.GetAsync(requestUri);
+            });
+        }
+
+        public Task<HttpResponseMessage?> GetAsync(Uri requestUri)
         {
             return this.coreAsync(() =>
             {
@@ -102,12 +110,30 @@ namespace IMustafa
             });
         }
 
+        public Task<HttpResponseMessage?> PatchAsync(Uri requestUri, HttpContent content)
+        {
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PatchAsync(requestUri, content);
+            });
+        }
+
         public Task<HttpResponseMessage?> PatchAsync(string requestUri, HttpContent content)
         {
             return this.coreAsync(() =>
             {
                 return _httpClient.PatchAsync(requestUri, content);
             });
+        }
+
+        public Task<HttpResponseMessage?> PostAsync(Uri requestUri, HttpContent content)
+        {
+
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PostAsync(requestUri, content);
+            });
+
         }
 
         public Task<HttpResponseMessage?> PostAsync(string requestUri, HttpContent content)
@@ -119,6 +145,27 @@ namespace IMustafa
             });
 
         }
+
+        public Task<HttpResponseMessage?> PutAsync(Uri requestUri, HttpContent content)
+        {
+
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PutAsync(requestUri, content);
+            });
+
+        }
+
+        public Task<HttpResponseMessage?> PutAsync(string requestUri, HttpContent content)
+        {
+
+            return this.coreAsync(() =>
+            {
+                return _httpClient.PutAsync(requestUri, content);
+            });
+
+        }
+
 
 
         public void Dispose()
