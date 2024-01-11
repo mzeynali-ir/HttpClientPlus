@@ -90,6 +90,7 @@ namespace IMustafa.Web
         public void Dispose()
         {
             _httpClient?.Dispose();
+            _config.Dispose();
         }
 
     }
