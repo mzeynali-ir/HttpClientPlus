@@ -79,7 +79,7 @@ namespace IMustafa.Web
             }
             finally
             {
-                await _config.FinalAsync();
+                await _config.FinallyAsync();
             }
 
             return response;

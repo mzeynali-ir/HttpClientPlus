@@ -20,7 +20,7 @@ namespace IMustafa.Web
 
         public virtual Task WhenHasErrorAsync() => Task.CompletedTask;
 
-        public virtual Task FinalAsync() => Task.CompletedTask;
+        public virtual Task FinallyAsync() => Task.CompletedTask;
 
     }
 }

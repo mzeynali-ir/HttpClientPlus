@@ -57,11 +57,11 @@ namespace ConsoleApp_Examples
             return base.BeforeExecuteAsync();
         }
 
-        public override Task FinalAsync()
+        public override Task FinallyAsync()
         {
             Console.WriteLine("Final");
 
-            return base.FinalAsync();
+            return base.FinallyAsync();
         }
 
 
