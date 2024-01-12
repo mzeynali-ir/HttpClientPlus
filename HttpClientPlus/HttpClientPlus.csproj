@@ -14,6 +14,8 @@
 		<Copyright>2024</Copyright>
 
 		<ApplicationIcon>favicon.ico</ApplicationIcon>
+
+		<Authors>IMustafa Zeynali (IMustafa.net)</Authors>
 	</PropertyGroup>
 
 	<ItemGroup>
