@@ -15,9 +15,10 @@ namespace ConsoleApp_Examples
             {
                 using (var client = new HttpClientPlus(new MyConfig()))
                 {
+                    string url = "https://google.com";
                     client.AddBearerAuthentication("");
                     client.SetContentType(ContentType.Application_Json);
-                    var rrr = client.GetAsync("https://google.com").Result;
+                    var rrr = client.GetAsync(url).Result;
                 }
 
                 Console.ReadLine();
