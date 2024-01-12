@@ -9,7 +9,7 @@ namespace ConsoleApp_Examples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World! I'm HttpClientPlus. I Improve HttpClient Microsoft.");
 
             while (true)
             {
@@ -19,7 +19,6 @@ namespace ConsoleApp_Examples
                     client.SetContentType(ContentType.Application_Json);
                     client.BaseAddress = new Uri("https://google.com");
                     var rrr = client.GetAsync("https://google.com").Result;
-
                 }
 
                 Console.ReadLine();
@@ -32,17 +31,22 @@ namespace ConsoleApp_Examples
 
         public override Task AfterExecuteAsync()
         {
-            Console.WriteLine("after");
+            Console.WriteLine("after call api.");
 
             return base.AfterExecuteAsync();
         }
 
         public override Task AfterExecuteAsync(HttpResponseMessage response)
         {
+            Console.WriteLine("after call api.");
 
             if (response.IsSuccessStatusCode)
             {
-                Console.WriteLine("response is success");
+                Console.WriteLine("response is success :)");
+            }
+            else
+            {
+                Console.WriteLine("response is failure :(");
             }
 
             return base.AfterExecuteAsync(response);
@@ -50,20 +54,20 @@ namespace ConsoleApp_Examples
 
         public override Task BeforeExecuteAsync()
         {
+            //set bearer authorization to all request just once!
             this.SetDefaultAuthorization(AuthorizationType.Bearer("token"));
 
-            Console.WriteLine("before");
+            Console.WriteLine("before call api.");
 
             return base.BeforeExecuteAsync();
         }
 
         public override Task FinallyAsync()
         {
-            Console.WriteLine("Final");
+            Console.WriteLine("Finally.");
 
             return base.FinallyAsync();
         }
-
 
     }
 }
