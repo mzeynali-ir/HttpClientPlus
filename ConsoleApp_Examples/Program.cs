@@ -17,7 +17,6 @@ namespace ConsoleApp_Examples
                 {
                     client.AddBearerAuthentication("");
                     client.SetContentType(ContentType.Application_Json);
-                    client.BaseAddress = new Uri("https://google.com");
                     var rrr = client.GetAsync("https://google.com").Result;
                 }
 
