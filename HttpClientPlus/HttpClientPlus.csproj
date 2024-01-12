@@ -9,7 +9,10 @@
 		<PrivateAssets>compile</PrivateAssets>
 		<Company>IMustafa</Company>
 
-		<Description>this package is layer for HttpClient package for Improve it. my package let you call actions in before all call apis. enjoy it 😃</Description>
+		<Description>
+			this package is layer for HttpClient package for Improve it. my package let you call actions in before all call apis. enjoy it 😃
+			document: https://hcp.imustafa.net
+		</Description>
 
 		<Copyright>2024</Copyright>
 
