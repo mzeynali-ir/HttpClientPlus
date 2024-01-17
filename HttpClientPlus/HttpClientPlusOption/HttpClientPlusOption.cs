@@ -9,7 +9,9 @@ namespace IMustafa.Web
 		public List<RequestHeader>? DefaultHeaders { get; private set; }
 		public AuthorizationType? DefaultAuthorization { get; private set; }
 		protected HttpContent? HttpContent { get; private set; }
-		public void SetHttpContent(HttpContent httpContent) => this.HttpContent = httpContent;
+		protected HttpRequestMessage? HttpRequestMessage { get; private set; }
+		public void SetHttpContent(HttpContent? httpContent) => this.HttpContent = httpContent;
+		public void SetHttpRequestMessage(HttpRequestMessage? HttpRequestMessage) => this.HttpRequestMessage = HttpRequestMessage;
 
 		public void Dispose()
 		{

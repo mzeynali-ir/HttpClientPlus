@@ -4,32 +4,38 @@ using System.Threading.Tasks;
 
 namespace IMustafa.Web
 {
-    public partial class HttpClientPlus
-    {
+	public partial class HttpClientPlus
+	{
 
-        public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.SendAsync(request);
-            });
-        }
+		public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request)
+		{
+			_config.SetHttpRequestMessage(request);
 
-        public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.SendAsync(request, completionOption);
-            });
-        }
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request);
+			});
+		}
 
-        public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.SendAsync(request, completionOption, cancellationToken);
-            });
-        }
+		public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption)
+		{
+			_config.SetHttpRequestMessage(request);
 
-    }
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request, completionOption);
+			});
+		}
+
+		public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+		{
+			_config.SetHttpRequestMessage(request);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request, completionOption, cancellationToken);
+			});
+		}
+
+	}
 }
