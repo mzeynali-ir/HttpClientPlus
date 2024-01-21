@@ -10,36 +10,48 @@ namespace IMustafa.Web
 
 		public Task<HttpResponseMessage?> PatchAsync(Uri requestUri, HttpContent content)
 		{
+			var request = new HttpRequestMessage(HttpMethod.Patch, requestUri);
+			request.Content = content;
+
 			return this.coreAsync(() =>
 			{
-				return _httpClient.PatchAsync(requestUri, content);
+				return _httpClient.SendAsync(request);
 			}
 			, content);
 		}
 
 		public Task<HttpResponseMessage?> PatchAsync(string requestUri, HttpContent content)
 		{
+			var request = new HttpRequestMessage(HttpMethod.Patch, requestUri);
+			request.Content = content;
+
 			return this.coreAsync(() =>
 			{
-				return _httpClient.PatchAsync(requestUri, content);
+				return _httpClient.SendAsync(request);
 			}
 			, content);
 		}
 
 		public Task<HttpResponseMessage?> PatchAsync(Uri requestUri, HttpContent content, CancellationToken cancellationToken)
 		{
+			var request = new HttpRequestMessage(HttpMethod.Patch, requestUri);
+			request.Content = content;
+
 			return this.coreAsync(() =>
 			{
-				return _httpClient.PatchAsync(requestUri, content, cancellationToken);
+				return _httpClient.SendAsync(request,cancellationToken);
 			}
 			, content);
 		}
 
 		public Task<HttpResponseMessage?> PatchAsync(string requestUri, HttpContent content, CancellationToken cancellationToken)
 		{
+			var request = new HttpRequestMessage(HttpMethod.Patch, requestUri);
+			request.Content = content;
+
 			return this.coreAsync(() =>
 			{
-				return _httpClient.PatchAsync(requestUri, content, cancellationToken);
+				return _httpClient.SendAsync(request, cancellationToken);
 			}
 			, content);
 		}

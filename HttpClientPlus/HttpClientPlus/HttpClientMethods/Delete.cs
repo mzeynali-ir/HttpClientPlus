@@ -10,35 +10,43 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.DeleteAsync(requestUri);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request);
+			});
+		}
 
         public Task<HttpResponseMessage?> DeleteAsync(string requestUri)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.DeleteAsync(requestUri);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request);
+			});
+		}
 
         public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.DeleteAsync(requestUri, cancellationToken);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request,cancellationToken);
+			});
+		}
 
         public Task<HttpResponseMessage?> DeleteAsync(string requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.DeleteAsync(requestUri, cancellationToken);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request, cancellationToken);
+			});
+		}
 
     }
 }

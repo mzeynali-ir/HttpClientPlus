@@ -10,67 +10,75 @@ namespace IMustafa.Web
 
         public Task<HttpResponseMessage?> GetAsync(string requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri, cancellationToken);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request, cancellationToken);
+			});
+		}
 
         public Task<HttpResponseMessage?> GetAsync(Uri requestUri)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
 
-        public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri, completionOption);
-            });
-        }
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request);
+			});
+		}
 
-        public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri, completionOption);
-            });
-        }
+        //public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption)
+        //{
+        //    return this.coreAsync(() =>
+        //    {
+        //        return _httpClient.GetAsync(requestUri, completionOption);
+        //    });
+        //}
+
+        //public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption)
+        //{
+        //    return this.coreAsync(() =>
+        //    {
+        //        return _httpClient.GetAsync(requestUri, completionOption);
+        //    });
+        //}
 
         public Task<HttpResponseMessage?> GetAsync(Uri requestUri, CancellationToken cancellationToken)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri, cancellationToken);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request, cancellationToken);
+			});
+		}
 
         public Task<HttpResponseMessage?> GetAsync(string requestUri)
         {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri);
-            });
-        }
+			var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
 
-        public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
-            });
-        }
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request);
+			});
+		}
 
-        public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
-        {
-            return this.coreAsync(() =>
-            {
-                return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
-            });
-        }
+        //public Task<HttpResponseMessage?> GetAsync(string requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+        //{
+        //    return this.coreAsync(() =>
+        //    {
+        //        return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
+        //    });
+        //}
+
+        //public Task<HttpResponseMessage?> GetAsync(Uri requestUri, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+        //{
+        //    return this.coreAsync(() =>
+        //    {
+        //        return _httpClient.GetAsync(requestUri, completionOption, cancellationToken);
+        //    });
+        //}
 
     }
 }
