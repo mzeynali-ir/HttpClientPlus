@@ -37,5 +37,15 @@ namespace IMustafa.Web
 			});
 		}
 
+		public Task<HttpResponseMessage?> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+		{
+			_config.SetHttpRequestMessage(request);
+
+			return this.coreAsync(() =>
+			{
+				return _httpClient.SendAsync(request, cancellationToken);
+			});
+		}
+
 	}
 }

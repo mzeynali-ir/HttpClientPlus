@@ -5,48 +5,32 @@ using System.Threading.Tasks;
 
 namespace IMustafa.Web
 {
-    public partial class HttpClientPlus
-    {
+	public partial class HttpClientPlus
+	{
 
-        public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri)
-        {
+		public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri)
+		{
 			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
-
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request);
-			});
+			return this.SendAsync(request);
 		}
 
-        public Task<HttpResponseMessage?> DeleteAsync(string requestUri)
-        {
+		public Task<HttpResponseMessage?> DeleteAsync(string requestUri)
+		{
 			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
-
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request);
-			});
+			return this.SendAsync(request);
 		}
 
-        public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri, CancellationToken cancellationToken)
-        {
+		public Task<HttpResponseMessage?> DeleteAsync(Uri requestUri, CancellationToken cancellationToken)
+		{
 			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
-
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request,cancellationToken);
-			});
+			return this.SendAsync(request, cancellationToken);
 		}
 
-        public Task<HttpResponseMessage?> DeleteAsync(string requestUri, CancellationToken cancellationToken)
-        {
+		public Task<HttpResponseMessage?> DeleteAsync(string requestUri, CancellationToken cancellationToken)
+		{
 			var request = new HttpRequestMessage(HttpMethod.Delete, requestUri);
-
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request, cancellationToken);
-			});
+			return this.SendAsync(request, cancellationToken);
 		}
 
-    }
+	}
 }

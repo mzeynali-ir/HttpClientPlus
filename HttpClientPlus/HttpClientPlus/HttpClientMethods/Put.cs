@@ -13,21 +13,14 @@ namespace IMustafa.Web
 
 			var request = new HttpRequestMessage(HttpMethod.Put, requestUri);
 			request.Content = content;
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request);
-			});
-
+			return this.SendAsync(request);
 		}
 
 		public Task<HttpResponseMessage?> PutAsync(string requestUri, HttpContent content)
 		{
 			var request = new HttpRequestMessage(HttpMethod.Put, requestUri);
 			request.Content = content;
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request);
-			});
+			return this.SendAsync(request);
 		}
 
 		public Task<HttpResponseMessage?> PutAsync(Uri requestUri, HttpContent content, CancellationToken cancellationToken)
@@ -35,21 +28,14 @@ namespace IMustafa.Web
 
 			var request = new HttpRequestMessage(HttpMethod.Put, requestUri);
 			request.Content = content;
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request, cancellationToken);
-			});
-
+			return this.SendAsync(request, cancellationToken);
 		}
 
 		public Task<HttpResponseMessage?> PutAsync(string requestUri, HttpContent content, CancellationToken cancellationToken)
 		{
 			var request = new HttpRequestMessage(HttpMethod.Put, requestUri);
 			request.Content = content;
-			return this.coreAsync(() =>
-			{
-				return _httpClient.SendAsync(request, cancellationToken);
-			});
+			return this.SendAsync(request, cancellationToken);
 		}
 
 	}
